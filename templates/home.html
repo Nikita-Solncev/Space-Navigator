@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+    <div>
+        <h1>Welcome to Space Navigator!</h1>
+        <p>Click on a solar system below to explore its planets:</p>
+    </div>
+
+    <div>
+        <ul>
+            {% for solar_system in solar_systems %}
+            
+                <li><a href="{{ url_for('system', solar_system_id=solar_system.id) }}">{{ solar_system.name }}</a></li>
+            
+            {% endfor %}
+        </ul>
+    </div>
+{% endblock %}

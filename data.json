@@ -1,0 +1,48 @@
+{
+    "solar_systems": [
+      {
+        "id": 1,
+        "name": "Alpha Centauri",
+        "description": "Alpha Centauri is the closest star system and closest planetary system to Earth's Solar System at 4.37 light-years from the Sun.",
+        "image": "alpha_centauri.png",
+        "planets": [
+          {
+            "id": 101,
+            "name": "Proxima Centauri b",
+            "description": "Proxima Centauri b is an exoplanet orbiting in the habitable zone of the red dwarf star Proxima Centauri.",
+            "image": "proxima_centauri_b.png",
+            "distance": 0.05
+          },
+          {
+            "id": 102,
+            "name": "Proxima Centauri c",
+            "description": "Proxima Centauri c is a confirmed exoplanet, orbiting the red dwarf star Proxima Centauri.",
+            "image": "proxima_centauri_c.png",
+            "distance": 1.5
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "name": "TRAPPIST-1",
+        "description": "TRAPPIST-1 is an ultra-cool red dwarf star that is slightly larger but much more massive than the planet Jupiter, located 39.6 light-years from the Sun.",
+        "image": "trappist_1.png",
+        "planets": [
+          {
+            "id": 201,
+            "name": "TRAPPIST-1 b",
+            "description": "TRAPPIST-1 b is the innermost planet and is likely to have a rocky composition.",
+            "image": "trappist_1_b.png",
+            "distance": 0.011
+          },
+          {
+            "id": 202,
+            "name": "TRAPPIST-1 c",
+            "description": "TRAPPIST-1 c is the second innermost planet and is composed primarily of rock and iron.",
+            "image": "trappist_1_c.png",
+            "distance": 0.015
+          }
+        ]
+      }
+    ]
+  }
