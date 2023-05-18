@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
-    <div>
+    <div>   
         <h1>{{ solar_system.name }}</h1>
         <p>{{ solar_system.description }}</p>
+    </div>
+    <div>
+        <ul>
+        {% for planet in planets %}
+            
+                <li><a href="{{ url_for('planet', planet_id=planet.id) }}">{{ planet.name }}</a></li>
+            
+        {% endfor %}
+        </ul>
     </div>
 {% endblock %}
