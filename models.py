@@ -1,16 +1,20 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class SolarSystem:
-    def __init__(self, id, name, description, image, planets):
-        self.id = id
-        self.name = name
-        self.description = description
-        self.image = image
-        self.planets = planets
+    id: int
+    name: str
+    description: str
+    image: str
+    planets: list
+    
 
-
+@dataclass
 class Planet:
-    def __init__(self, id, name, description, image, distance):
-        self.id = id
-        self.name = name
-        self.description = description
-        self.image = image
-        self.distance = distance
+    id: int
+    solar_system_id: int
+    name: str
+    description: str
+    image: str
+    distance: float
