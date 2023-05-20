@@ -1,24 +1,24 @@
 from flask import Flask, render_template, abort
-from data import load_solar_systems_and_planets 
+from data import load_systems_and_planets 
 
 app = Flask(__name__)
 
-solar_systems, planets = load_solar_systems_and_planets()
+systems, planets = load_systems_and_planets()
 
 
 @app.route("/home")
 def home():
-    return render_template("home.html", solar_systems=solar_systems)
+    return render_template("home.html", systems=systems)
 
 
-@app.route("/solar_system/<int:solar_system_id>")
-def system(solar_system_id):
-    for solar_system in solar_systems:
-        if solar_system.id == solar_system_id:
+@app.route("/system/<int:system_id>")
+def system(system_id):
+    for system in systems:
+        if system.id == system_id:
             return render_template(
                 "system.html",
-                solar_system=solar_system,
-                planets=solar_system.planets
+                system=system,
+                planets=system.planets
             )
     abort(404)
 

@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class SolarSystem:
+class System:
     id: int
     name: str
     description: str
@@ -13,8 +13,8 @@ class SolarSystem:
 @dataclass
 class Planet:
     id: int
-    solar_system_id: int
+    system_id: int
     name: str
     description: str
     image: str
-    distance: float
+    distance: str

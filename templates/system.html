@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% block content %}
     <div>   
-        <h1>{{ solar_system.name }}</h1>
-        <p>{{ solar_system.description }}</p>
-        <img src="/static/img/{{solar_system.image}}">
+        <h1>{{ system.name }}</h1>
+        <p>{{ system.description }}</p>
+        <img src="/static/img/{{system.image}}">
     </div>
     <div>
-        <h3>Planets in this solar system:</h3>
+        <h3>Planets in this system:</h3>
         <ul>
         {% for planet in planets %}
             

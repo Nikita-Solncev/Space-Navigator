@@ -2,14 +2,14 @@
 {% block content %}
     <div>
         <h1>Welcome to Space Navigator!</h1>
-        <p>Click on a solar system below to explore its planets:</p>
+        <p>Click on a system below to explore its planets:</p>
     </div>
 
     <div>
         <ul>
-            {% for solar_system in solar_systems %}
+            {% for system in systems %}
             
-                <li><a href="{{ url_for('system', solar_system_id=solar_system.id) }}">{{ solar_system.name }}</a></li>
+                <li><a href="{{ url_for('system', system_id=system.id) }}">{{ system.name }}</a></li>
             
             {% endfor %}
         </ul>

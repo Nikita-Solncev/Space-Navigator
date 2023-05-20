@@ -1,5 +1,5 @@
 import json
-from models import SolarSystem, Planet
+from models import System, Planet
 
 
 def load_data(file):
@@ -11,12 +11,12 @@ def load_data(file):
 
 def create_planet_objects(data):
     planets = []
-    for solar_system in data["solar_systems"]:
-        for planet in solar_system["planets"]:
+    for system in data["systems"]:
+        for planet in system["planets"]:
             planets.append(
                 Planet(
                     id=planet["id"],
-                    solar_system_id=solar_system["id"],
+                    system_id=system["id"],
                     name=planet["name"],
                     description=planet["description"],
                     image=planet["image"],
@@ -27,29 +27,29 @@ def create_planet_objects(data):
     return planets
 
 
-def create_solar_system_objects(data, planets):
-    solar_systems = []
-    for solar_system in data["solar_systems"]:
-        solar_systems.append(
-            SolarSystem(
-                id=solar_system["id"],
-                name=solar_system["name"],
-                description=solar_system["description"],
-                image=solar_system["image"],
+def create_system_objects(data, planets):
+    systems = []
+    for system in data["systems"]:
+        systems.append(
+            System(
+                id=system["id"],
+                name=system["name"],
+                description=system["description"],
+                image=system["image"],
                 planets=[
                     planet
                     for planet in planets
-                    if planet.solar_system_id == solar_system["id"]
+                    if planet.system_id == system["id"]
                 ],
             )
         )
 
-    return solar_systems
+    return systems
 
 
-def load_solar_systems_and_planets():
+def load_systems_and_planets():
     data = load_data("data.json")
     planets = create_planet_objects(data)
-    solar_systems = create_solar_system_objects(data, planets)
+    systems = create_system_objects(data, planets)
 
-    return solar_systems, planets
+    return systems, planets
