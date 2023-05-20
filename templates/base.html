@@ -8,6 +8,15 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="navigation">
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">home</a></li>
+                <li><a href="#">haven't done yet</a></li>
+                <li><a href="#">haven't done yet</a></li>
+            </ul>
+        </nav>
+    </div>
     {% block content %}
     {% endblock %}
 </body>
