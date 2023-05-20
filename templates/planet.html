@@ -5,4 +5,16 @@
         <p>{{ planet.description }}</p>
         <img src="/static/img/{{planet.image}}">
     </div>
+    <div>
+        <h3>Other planets of this solar system:</h3>
+        <ul>
+            {% for forplanet in planets %}
+
+                {% if forplanet.solar_system_id == planet.solar_system_id and forplanet.name != planet.name %} <!--Я пока не придумал хорошего названия для переменной  (；一_一)  -->
+                    <li><a href="{{ url_for('planet', planet_id=forplanet.id) }}">{{forplanet.name}}</a></li>  
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+    </div>
 {% endblock %}

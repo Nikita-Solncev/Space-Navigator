@@ -27,7 +27,7 @@ def system(solar_system_id):
 def planet(planet_id):
     for planet in planets:
         if planet.id == planet_id:
-            return render_template("planet.html", planet=planet)
+            return render_template("planet.html", planet=planet, planets=planets)
     abort(404)
 
 
